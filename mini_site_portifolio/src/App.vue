@@ -1,30 +1,25 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="min-h-screen bg-gray-100">
+    <header class="bg-white shadow">
+      <nav class="max-w-3xl mx-auto p-4 flex justify-between">
+        <h1 class="text-xl font-bold text-blue-600">Mini Portfólio</h1>
+        <div class="flex gap-4">
+          <router-link to="/" class="text-blue-600 hover:underline">Home</router-link>
+          <router-link to="/habilidades" class="text-blue-600 hover:underline">Habilidades</router-link>
+          <router-link to="/contato" class="text-blue-600 hover:underline">Contato</router-link>
+        </div>
+      </nav>
+    </header>
+    <main class="max-w-3xl mx-auto p-4 mt-8">
+      <router-view></router-view>
+    </main>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<script>
+export default {
+  name: 'App'
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+</script>
+
+
