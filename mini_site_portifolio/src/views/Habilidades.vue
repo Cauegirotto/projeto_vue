@@ -1,20 +1,17 @@
 <template>
-  <div>
-    <h2 class="text-2xl font-bold mb-6 text-center">Meus Projetos</h2>
-    <ListaDeHabilidades/>
-    <DestaqueHabilidades/>
+  <div class="bg-blue-300 p-6">
+    <h2 class="text-2xl font-bold mb-6 text-center">Minhas Habilidades</h2>
+    <HomeHabilidades/>
   </div>
 </template>
 
 <script>
-import ListaDeHabilidades from '../components/ListaDeHabilidades.vue'
-import DestaqueHabilidades from '../components/DestaqueHabilidades.vue'
+import HomeHabilidades from '../components/HomeHabilidades.vue'
 
 export default {
   name: 'Habilidades',
   components: {
-    ListaDeHabilidades,
-    DestaqueHabilidades
+    HomeHabilidades,
 }
 }
 </script>

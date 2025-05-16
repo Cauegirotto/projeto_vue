@@ -1,22 +1,31 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import Habilidades from '../views/Habilidades.vue'
-import Contato from '../views/Contato.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import Home from '../views/Home.vue';
 
-const rotas = [
-    { path: '/', name:'Home', component: Home },
-    { path: '/habilidades', name:'Habilidades', component: Habilidades },
-    { path: '/contato', name:'Contato', component: Contato },
-    
-]
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home,
+  },
+  {
+    path: '/habilidades',
+    name: 'Habilidades',
+    component: () => import('../views/Habilidades.vue'),
+  },
+  {
+    path: '/contato',
+    name: 'Contato',
+    component: () => import('../views/Contato.vue'),
+  },
+];
 
-const router = createRouter ({
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
 
-    history: createWebHistory(),
-    rotas
-})
+export default router;
 
-export default router
 
 
 
